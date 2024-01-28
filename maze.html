@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SDG Maze Explorer</title>
+    <style>
+        /* CSS styles for the game */
+        /* Customize the styles as per your preference */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        #maze {
+            margin: 0 auto;
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            position: relative;
+        }
+        
+        .cell {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: 1px solid black;
+            position: absolute;
+        }
+        
+        .player {
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            position: absolute;
+        }
+        
+        .item {
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .obstacle {
+            background-color: red;
+        }
+        
+        #info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SDG Maze Explorer</h1>
+    
+    <div id="maze"></div>
+    
+    <div id="info">
+        <h3>SDG Information:</h3>
+        <p id="sdg-info"></p>
+    </div>
+    
+    <script src="maze.js"></script>
+</body>
+</html>

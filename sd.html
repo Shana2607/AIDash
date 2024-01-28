@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SDG Action Plan</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+    
+    #main-content {
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    form {
+      display: grid;
+      grid-gap: 20px;
+    }
+    
+    label {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    textarea {
+      height: 180px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+    
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #555;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .sdg-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SDG Action Plan</h1>
+  </header>
+  
+  <section id="main-content">
+    <h2>Create an Action Plan to Address the Sustainable Development Goals</h2>
+    <p>Make a positive impact on society.</p>
+    <img class="sdg-image" src="sdg.jpg" alt="SDG Image">
+    <form id="action-plan-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="sdg-focus">SDG Focus:</label>
+      <select id="sdg-focus" name="sdg-focus" required>
+        <option value="" selected disabled>Select an SDG</option>
+        <option value="1">SDG 1: No Poverty</option>
+        <option value="2">SDG 2: Zero Hunger</option>
+        <option value="3">SDG 3: Good Health and Well-being</option>
+        <!-- Add more SDGs here -->
+      </select>
+      
+      <label for="action-steps">Action Steps:</label>
+      <textarea id="action-steps" name="action-steps" required></textarea>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  
+  <footer>
+    <p>&copy; 2023 Chitisha</p>
+  </footer>
+  
+</body>
+</html>

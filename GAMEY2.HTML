@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SDG Trivia Challenge</title>
+    <style>
+        /* Add your CSS styles here */
+        /* This is just a placeholder, you can customize it as per your design preferences */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        #question {
+            margin-bottom: 20px;
+        }
+        
+        #options {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #options li {
+            margin-bottom: 10px;
+        }
+        
+        #feedback {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SDG Trivia Challenge</h1>
+    
+    <div id="question"></div>
+    
+    <ul id="options"></ul>
+    
+    <button onclick="checkAnswer()">Submit Answer</button>
+    
+    <div id="feedback"></div>
+    
+    <script>
+        // Define an array of SDG trivia questions
+        var questions = [
+            {
+                question: "Which Sustainable Development Goal focuses on 'Zero Hunger'?",
+                options: ["SDG 1", "SDG 2", "SDG 3", "SDG 4"],
+                answer: 1
+            },
+            {
+                question: "Which Sustainable Development Goal aims to 'Ensure access to water and sanitation for all'?",
+                options: ["SDG 5", "SDG 6", "SDG 7", "SDG 8"],
+                answer: 1
+            },
+            {
+                question: "Which Sustainable Development Goal is related to 'Gender Equality'?",
+                options: ["SDG 9", "SDG 10", "SDG 11", "SDG 5"],
+                answer: 3
+            },
+            {
+                question: "Which Sustainable Development Goal aims to 'Combat climate change and its impacts'?",
+                options: ["SDG 13", "SDG 14", "SDG 15", "SDG 16"],
+                answer: 0
+            },
+            {
+                question: "Which Sustainable Development Goal focuses on 'Quality Education'?",
+                options: ["SDG 17", "SDG 18", "SDG 4", "SDG 19"],
+                answer: 2
+            }
+        ];
+        
+        var currentQuestion = 0;
+        var score = 0;
+        
+        // Function to display the current question
+        function displayQuestion() {
+            var questionElement = document.getElementById("question");
+            var optionsElement = document.getElementById("options");
+            var feedbackElement = document.getElementById("feedback");
+            
+            // Clear previous question and feedback
+            questionElement.innerHTML = "";
+            optionsElement.innerHTML = "";
+            feedbackElement.innerHTML = "";
+            
+            // Display the current question
+            questionElement.innerHTML = questions[currentQuestion].question;
+            
+            // Display the options
+            for (var i = 0; i < questions[currentQuestion].options.length; i++) {
+                var option = document.createElement("li");
+                option.innerHTML = '<input type="radio" name="answer" value="' + i + '"> ' + questions[currentQuestion].options[i];
+                optionsElement.appendChild(option);
+            }
+        }
+        
+        // Function to check the selected answer and provide feedback
+        function checkAnswer() {
+            var selectedOption = document.querySelector('input[name="answer"]:checked');
+            var feedbackElement = document.getElementById("feedback");
+            
+            if (selectedOption) {
+                var selectedAnswer = parseInt(selectedOption.value);
+                
+                if (selectedAnswer === questions[currentQuestion].answer) {
+                    score++;
+                    feedbackElement.innerHTML = "Correct!";
+                } else {
+                    feedbackElement.innerHTML = "Incorrect!";
+                }
+                
+                // Move to the next question
+                currentQuestion++;
+                
+                // Check if all questions have been answered
+                if (currentQuestion === questions.length) {
+                    // Display the final score
+                    feedbackElement.innerHTML += " Quiz completed! Your score: " + score + " out of " + questions.length;
+                    
+                    // Disable the submit button
+                    document.querySelector("button").disabled = true;
+                } else {
+                    // Display the next question
+                    displayQuestion();
+                }
+            } else {
+                feedbackElement.innerHTML = "Please select an answer.";
+            }
+        }
+        
+        // Call the displayQuestion function to start the game
+        displayQuestion();
+    </script>
+</body>
+</html>
