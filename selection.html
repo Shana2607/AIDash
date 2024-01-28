@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Selection</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #F9F9F9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FF4081;
+            margin-top: 0;
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .game-card {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #FF4081;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s;
+            background-color: #FFFFFF;
+        }
+
+        .game-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-card a {
+            text-decoration: none;
+            color: #FF4081;
+            font-weight: bold;
+        }
+
+        .game-card h2 {
+            color: #FF4081;
+        }
+
+        .game-card p {
+            color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Selection</h1>
+
+    <div class="game-container">
+        <div class="game-card">
+            <h2>Game 1</h2>
+            <p>SDG Crossword</p>
+            <a href="GAMEY.html">Play Game 1</a>
+        </div>
+
+        <div class="game-card">
+            <h2>Game 2</h2>
+            <p>SDG Trivia</p>
+            <a href="GAMEY2.html">Play Game 2</a>
+        </div>
+
+        <div class="game-card">
+            <h2>Game 3</h2>
+            <p>SDG Maze</p>
+            <a href="maze.html">Play Game 3</a>
+        </div>
+    </div>
+</body>
+</html>

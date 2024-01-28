@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6633CC;
+            text-align: center;
+        }
+
+        header {
+            background-color: #99FFCC;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            margin: 20px 0;
+        }
+
+        .chat-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+
+        .user-message {
+            text-align: right;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Tutoring</h1>
+    </header>
+    <div class="container">
+        <h2>Welcome to AI Tutoring!</h2>
+        <p>Your AI tutor is here to help you with your studies. Feel free to ask questions and seek guidance.</p>
+        <div class="chat-container">
+            <div class="user-message">
+                <p>User: How do I solve quadratic equations?</p>
+            </div>
+            <!-- Replace with AI tutor response -->
+            <div>
+                <p>AI Tutor: To solve a quadratic equation, you can use the quadratic formula...</p>
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type your question...">
+            <button onclick="askQuestion()">Ask</button>
+        </div>
+    </div>
+
+    <script>
+        function askQuestion() {
+            const userInput = document.getElementById("userInput").value;
+            const chatContainer = document.querySelector(".chat-container");
+
+            // Display user's question
+            const userMessage = document.createElement("div");
+            userMessage.classList.add("user-message");
+            userMessage.innerHTML = `<p>User: ${userInput}</p>`;
+            chatContainer.appendChild(userMessage);
+
+            // Simulate AI tutor response (replace with actual AI response)
+            const aiResponse = document.createElement("div");
+            aiResponse.innerHTML = '<p>AI Tutor: Here is the answer to your question...</p>';
+            chatContainer.appendChild(aiResponse);
+
+            // Clear user input
+            document.getElementById("userInput").value = "";
+        }
+    </script>
+</body>
+</html>

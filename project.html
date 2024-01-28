@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #F9F9F9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        .sdg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .sdg-card {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #333333;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s;
+            background-color: #FFFFFF;
+        }
+
+        .sdg-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .sdg-card h2 {
+            color: #333333;
+        }
+
+        .sdg-card p {
+            color: #555555;
+        }
+    </style>
+    <script>
+        function generateSDG() {
+            var sdgTopics = [
+                "No Poverty",
+                "Zero Hunger",
+                "Good Health and Well-being",
+                "Quality Education",
+                "Gender Equality",
+                "Clean Water and Sanitation",
+                "Affordable and Clean Energy",
+                "Decent Work and Economic Growth",
+                "Industry, Innovation, and Infrastructure",
+                "Reduced Inequalities",
+                "Sustainable Cities and Communities",
+                "Responsible Consumption and Production",
+                "Climate Action",
+                "Life Below Water",
+                "Life on Land",
+                "Peace, Justice, and Strong Institutions",
+                "Partnerships for the Goals"
+            ];
+
+            var randomTopic = sdgTopics[Math.floor(Math.random() * sdgTopics.length)];
+            document.getElementById("sdg-topic").textContent = randomTopic;
+        }
+    </script>
+</head>
+<body>
+    <h1>SDG Projects</h1>
+
+    <button onclick="generateSDG()">Generate SDG Topic</button>
+
+    <div class="sdg-container">
+        <div class="sdg-card">
+            <h2>SDG Topic:</h2>
+            <p id="sdg-topic"></p>
+        </div>
+    </div>
+</body>
+</html>

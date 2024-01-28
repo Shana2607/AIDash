@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Study Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            display: none; /* Initially hidden */
+        }
+
+        #media {
+            display: none; /* Initially hidden */
+        }
+
+        #media img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Virtual Study Assistant!</h1>
+        <p>How can I help you study today?</p>
+        <form>
+            <label for="subject">Select a subject:</label>
+            <select id="subject">
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="english">English</option>
+            </select>
+            <label for="task">Choose a task:</label>
+            <select id="task">
+                <option value="questions">Questions</option>
+                <option value="flashcards">Flashcards</option>
+                <option value="summary">Summary</option>
+            </select>
+            <input type="button" value="Submit" onclick="getHelp()">
+        </form>
+        <div id="response"></div>
+        <div id="media"></div>
+    </div>
+
+    <script>
+        function getHelp() {
+            var subject = document.getElementById("subject").value;
+            var task = document.getElementById("task").value;
+            var responseElement = document.getElementById("response");
+            var mediaElement = document.getElementById("media");
+
+            // Display a loading message
+            responseElement.innerHTML = "Getting " + task + " for " + subject + "... One moment please.";
+
+            // Simulate a delay (replace this with your actual data retrieval code)
+            setTimeout(function () {
+                // Replace this with the actual data or result you want to display
+                var data = "Here is the " + task + " for " + subject;
+
+                // Update the response element with the retrieved data
+                responseElement.innerHTML = data;
+
+                // Show media (replace with your media content)
+                mediaElement.innerHTML = '<img src="your_image_url_here" alt="Media">';
+                mediaElement.style.display = "block"; // Display the media
+
+                // Add sliding animation for the response and media
+                responseElement.style.display = "block";
+                responseElement.style.animation = "slide-in 0.5s ease-in-out";
+
+                mediaElement.style.animation = "slide-in 0.5s ease-in-out";
+            }, 1000); // Simulated delay of 1 second
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hologram Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .hologram {
+            width: 200px;
+            height: 200px;
+            background: url('C:\Users\Admin\Desktop\XYYX\solar.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            animation: hologram-animation 5s infinite linear;
+        }
+
+        @keyframes hologram-animation {
+            0% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hologram"></div>
+</body>
+
+</html>
